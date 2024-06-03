@@ -2,67 +2,272 @@
 
 /* Global styles */
 body {
-  font-family: 'Roboto', sans-serif;
+  width: 100%;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* Component styles */
 /* Todo component */
 .todo {
-  background-color: #f7fafc;
-  border-radius: 0.375rem;
-  padding: 1rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 0.5rem;
+  border-bottom: 1px solid #ddd;
+  height: fit-content;
+  background-color: #fff;
+  border-radius: 0;
+  padding: 0 0 0.75rem 0;
 }
 
-.todo h2 {
-  font-size: 1.25rem;
-  font-weight: 600;
+.todo h1 {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
   color: #333;
 }
 
-.todo p {
-  font-size: 1rem;
-  color: #4a5568;
+.todo .todo-action {
+  display: flex;
+  gap: 0.5rem;
+  height: fit-content;
 }
+
+.strikethrough {
+  text-decoration: line-through;
+}
+
 
 /* Create and Update forms */
-.form-container {
-  margin: 0 auto;
-  width: 20rem;
+.form-input {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding-top: 5rem;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  height: 44px;
+  margin: 0 auto;
+  padding: 0;
+  gap: 0;
 }
 
-.form-container h1 {
-  text-align: center;
-  font-size: 1.5rem;
+.form-input h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
   font-weight: 700;
-  color: #333;
+  color: #6ad4dd;
 }
 
-.form-container input[type="text"],
-.form-container input[type="checkbox"] {
+.form-input input[type="text"] {
   box-sizing: border-box;
   width: 100%;
+  height: 100%;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
   padding: 0.75rem;
-  border-radius: 0.375rem;
-  border: 1px solid #cbd5e0;
+  border-radius: 0.75rem 0 0 0.75rem;
+  border: 2px solid #eee;
 }
 
-.form-container input[type="checkbox"] {
+.form-input input[type="text"]:focus {
+  outline: none;
+}
+
+.form-input .checkbox {
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.form-input .checkbox input {
+  margin: 0;
   width: auto;
 }
 
-.form-container button {
-  width: 100%;
-  padding: 0.75rem;
-  border-radius: 0.375rem;
-  background-color: #68d391;
-  color: #fff;
+.form-input .checkbox label {
   font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.form-input button {
+  width: fit-content;
+  height: 100%;
+  padding: 0.75rem;
+  border-radius: 0 0.75rem 0.75rem 0;
+  border: 1px solid #eee;
+  background-color: #6ad4dd;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-input button:hover {
+  background-color: #62c3cb;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 640px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+  gap: 1rem;
+}
+
+.container .list {
+  background-color: #fff;
+  box-shadow: 0 0 6px 3px #eee;
+  box-sizing: border-box;
+  border-radius: 0.75rem;
+  padding: 2rem;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.btn-delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+  padding: 0.75rem;
+  border-radius: 2rem;
+  font-size: 1rem;
+  border: 1px solid #eee;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-color: #eee;
+  color: #ff2d2d;
+}
+
+.btn-delete:hover {
+  background-color: #ddd;
+}
+
+.btn-delete svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.btn-create {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  color: #6ad4dd;
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  gap: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-create:hover {
+  color: #62c3cb;
+}
+
+.btn-create svg {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #6ad4dd;
+  margin: 0;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 44px;
+  margin: 0 auto;
+  padding: 0;
+  gap: 1rem;
+}
+
+.form-container input[type="text"] {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
+  border: none;
+}
+
+.form-container input[type="text"]:focus {
+  outline: none;
+}
+
+.todo input [type="checkbox"] {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: transparent;
+  box-shadow: inset 0 0 0 1px #ccd3d8;
+  transition: background-color 0.3s;
+}
+
+.todo input [type="checkbox"]:checked::before {
+  background-color: dodgerblue;
+  box-shadow: none;
+}
+
+.form-container .checkbox input {
+  margin: 0;
+  width: auto;
+}
+
+.form-container .checkbox label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.form-container button {
+  width: fit-content;
+  height: 100%;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #eee;
+  background-color: #6ad4dd;
+  color: #fff;
+  font-size: 0.75rem;
   font-weight: 600;
   border: none;
   cursor: pointer;
@@ -70,59 +275,5 @@ body {
 }
 
 .form-container button:hover {
-  background-color: #48bb78;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
-}
-
-.btn-update {
-  padding: 0.75rem;
-  border-radius: 0.375rem;
-  background-color: #fca73f;
-  color: #fff;
-  font-size: 1rem;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.btn-update:hover {
-  background-color: #f6993f;
-}
-
-.btn-delete {
-  padding: 0.75rem;
-  border-radius: 0.375rem;
-  background-color: #ff2d2d;
-  color: #fff;
-  font-size: 1rem;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.btn-delete:hover {
-  background-color: #e11d1d;
-}
-
-.btn-create {
-  padding: 0.75rem;
-  border-radius: 0.375rem;
-  background-color: #68d391;
-  color: #fff;
-  font-size: 1rem;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.btn-create:hover {
-  background-color: #48bb78;
+  background-color: #62c3cb;
 }

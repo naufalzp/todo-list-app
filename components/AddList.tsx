@@ -17,7 +17,7 @@ const AddList = (props: Props) => {
       e.preventDefault();
       setIsLoading(true);
 
-      const res = await axios.post("http://localhost:3000/api/tasks", {
+      const res = await axios.post("https://todo-list-app-nine-rust.vercel.app/api/tasks", {
         title,
       });
 

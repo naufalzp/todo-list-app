@@ -5,7 +5,7 @@ import { toast } from "react-hot-toast";
 
 const getTasks = async () => {
   try {
-    const res = await axios.get("http://localhost:3000/api/tasks");
+    const res = await axios.get("https://todo-list-app-nine-rust.vercel.app/api/tasks");
     console.log(res.data);
     return res.data;
   } catch (error: any) {
